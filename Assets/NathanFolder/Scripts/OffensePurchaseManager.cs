@@ -9,13 +9,7 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] GameObject HeavyPrefab;
     [SerializeField] GameObject BusPrefab;
     [SerializeField] List<GameObject> spawnQueue = new List<GameObject>();
-    public enum EnemyType
-    {
-        Agile = 0,
-        Regular = 1,
-        Heavy = 2,
-        Bus = 3
-    }
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,4 +89,13 @@ public class OffensePurchaseManager : MonoBehaviour
     {
         
     }
+}
+
+
+public enum EnemyType
+{
+    Agile = 0,
+    Regular = 1,
+    Heavy = 2,
+    Bus = 3
 }

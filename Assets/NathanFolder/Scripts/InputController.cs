@@ -2,20 +2,26 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created 
-    [SerializeField] PlayerController playerController;
-    void Start()
+
+    [SerializeField] private PlayerController playerController;
+    private GameControls gameControls;
+
+    private void Awake() => gameControls = new GameControls();
+
+    void OnEnable()
     {
-        GameControls gameControls = new GameControls();
         gameControls.Mouse.MousePosition.performed += (var) => playerController.HandleMousePos(var.ReadValue<Vector2>());
         gameControls.Mouse.MouseLeftClick.performed += (var) => playerController.HandleMouseClicked();
         gameControls.Mouse.MouseLeftClick.canceled += (var) => playerController.HandleMouseReleased();
         gameControls.Enable();
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+
+        gameControls.Mouse.MousePosition.performed -= (var) => playerController.HandleMousePos(var.ReadValue<Vector2>());
+        gameControls.Mouse.MouseLeftClick.performed -= (var) => playerController.HandleMouseClicked();
+        gameControls.Mouse.MouseLeftClick.canceled -= (var) => playerController.HandleMouseReleased();
+        gameControls.Disable();
     }
+
 }
