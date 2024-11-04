@@ -88,7 +88,7 @@ public class OffensePurchaseManager : MonoBehaviour
     }
     public void ClearAll()
     {
-
+        spawnQueue.Clear();
     }
     // Update is called once per frame
     void Update()
