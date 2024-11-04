@@ -18,5 +18,5 @@ MonoBehaviour:
   _bulletSpeed: 5
   _bulletAccuracy: 0
   _canExplode: 0
-  _altFire: 1
+  _sniperMode: 1
   _bulletPrefab: {fileID: 0}

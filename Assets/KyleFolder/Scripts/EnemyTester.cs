@@ -13,9 +13,4 @@ public class EnemyTester : MonoBehaviour
             transform.Translate(Vector3.left * 5 * Time.deltaTime);
         }
     }
-
-    public void Kill()
-    {
-        Destroy(gameObject);
-    }
 }

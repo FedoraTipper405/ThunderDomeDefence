@@ -9,6 +9,6 @@ public class TurretData : ScriptableObject
     [SerializeField] public float _bulletSpeed;
     [SerializeField] public float _bulletAccuracy;
     [SerializeField] public bool _canExplode;
-    [SerializeField] public bool _altFire;
+    [SerializeField] public bool _sniperMode;
     [SerializeField] public GameObject _bulletPrefab;
 }

@@ -11,7 +11,7 @@ public class TurretLogic : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab => _turretData._bulletPrefab;
     [SerializeField] public float _bulletAccuracy => _turretData._bulletAccuracy;
     [SerializeField] public bool _canExplode => _turretData._canExplode;
-    [SerializeField] public bool _alt => _turretData._altFire;
+    [SerializeField] public bool _sniperFire => _turretData._sniperMode;
 
     [SerializeField] private Transform _turretRotation;
     [SerializeField] private Transform _firingPoint;
@@ -42,23 +42,29 @@ public class TurretLogic : MonoBehaviour
         }
         else
         {
-            if (canFire && _alt == false)
+            if (canFire && _sniperFire == false)
             {
                 StartCoroutine(CanShoot());
             }
-            if (canFire && _alt)
+            if (canFire && _sniperFire)
             {
-                StartCoroutine(CanShootAlt());
+                StartCoroutine(CanShootSniper());
             }
         }
     }
 
-    IEnumerator CanShootAlt()
+    IEnumerator CanShootSniper()
     {
         canFire = false;
-        AltFireMode();
+        SniperFireMode();
         yield return new WaitForSeconds(_timeBetweenShots);
         canFire = true;
+    }
+    IEnumerator ShowLaser()
+    {
+        laserLine.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        laserLine.enabled = false;
     }
 
     IEnumerator CanShoot()
@@ -69,17 +75,12 @@ public class TurretLogic : MonoBehaviour
         canFire = true;
     }
 
-    private void AltFireMode()
+    private void SniperFireMode()
     {
-        RaycastHit2D hit = Physics2D.Raycast(_firingPoint.position, _enemytarget.position - _firingPoint.position);
-        if (hit.collider != null)
-        {
-            laserLine.SetPosition(0, _firingPoint.position);
-            laserLine.SetPosition(1, _enemytarget.position);
-            laserLine.enabled = true;
-            Destroy(hit.transform.gameObject);
-        }
-
+        laserLine.SetPosition(0, _firingPoint.position);
+        laserLine.SetPosition(1, _enemytarget.position);
+        StartCoroutine(ShowLaser());
+        Destroy(_enemytarget.gameObject);
     }
 
     private void Shoot()

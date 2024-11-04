@@ -42,6 +42,7 @@ public class BulletLogic : MonoBehaviour
             {
                 ExplodingBullet();
             }
+            Destroy(collision.transform.gameObject);
             Destroy(gameObject);
         }
     }
@@ -51,7 +52,7 @@ public class BulletLogic : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, _explosionSize);
         foreach (Collider2D enemy in enemies)
         {
-            if (enemy.GetComponent<EnemyTester>() != null)
+            if (enemy.gameObject.CompareTag("Enemy"))
             {
                 Destroy(enemy.transform.gameObject);
             }
