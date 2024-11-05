@@ -6,6 +6,7 @@ public class DefensePurchaseManager : MonoBehaviour
     int defenseMoney = 100;
     GameObject currentSelectedSquare;
     bool menuIsOpen = false;
+    [SerializeField] GameObject[] towerPrefabs;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +35,8 @@ public class DefensePurchaseManager : MonoBehaviour
     }
     public void PurchaseTowerType(int towerIndex)
     {
-        currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);
+        GameObject towerToSpawn = Instantiate(towerPrefabs[towerIndex-1],currentSelectedSquare.transform.position, Quaternion.identity);
+       // currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);
         currentSelectedSquare.gameObject.SetActive(false);
     }
     // Update is called once per frame

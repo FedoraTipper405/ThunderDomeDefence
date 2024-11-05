@@ -6014,6 +6014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a60cd213b18fe94a9bd89187c3f2aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefabs:
+  - {fileID: 3963870448078580771, guid: 8fd0379c7b6536c48b268f92871e2620, type: 3}
+  - {fileID: 5892933131910655494, guid: 34337b97254a02942bf08983075cae63, type: 3}
+  - {fileID: 1936994928796594160, guid: 7f16194713fbd9e4c9e1b5776e62dbaf, type: 3}
+  - {fileID: 1054369342775440911, guid: cdaf6109213ee214686d41ceabb92c72, type: 3}
 --- !u!4 &1107826376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4609416952348374746, guid: ad79b49341bfd794282c0821619f1e88, type: 3}

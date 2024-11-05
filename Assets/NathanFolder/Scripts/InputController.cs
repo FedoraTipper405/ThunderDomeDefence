@@ -12,7 +12,6 @@ public class InputController : MonoBehaviour
     {
         gameControls.Mouse.MousePosition.performed += (var) => playerController.HandleMousePos(var.ReadValue<Vector2>());
         gameControls.Mouse.MouseLeftClick.performed += (var) => playerController.HandleMouseClicked();
-        gameControls.Mouse.MouseLeftClick.canceled += (var) => playerController.HandleMouseReleased();
         gameControls.Enable();
     }
     void OnDisable()
@@ -20,7 +19,6 @@ public class InputController : MonoBehaviour
 
         gameControls.Mouse.MousePosition.performed -= (var) => playerController.HandleMousePos(var.ReadValue<Vector2>());
         gameControls.Mouse.MouseLeftClick.performed -= (var) => playerController.HandleMouseClicked();
-        gameControls.Mouse.MouseLeftClick.canceled -= (var) => playerController.HandleMouseReleased();
         gameControls.Disable();
     }
 
