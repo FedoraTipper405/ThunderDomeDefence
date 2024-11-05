@@ -11,6 +11,8 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] List<GameObject> spawnQueue = new List<GameObject>();
     [SerializeField] List<EnemyMovement> tempEnemyList = new List<EnemyMovement>();
     [SerializeField] Transform spawnLocation;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] SimulationManager simulationManager;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -92,6 +94,7 @@ public class OffensePurchaseManager : MonoBehaviour
         for (int i = 0 ; i < spawnQueue.Count; i++)
         {
             GameObject lastSpawnedEnemy = Instantiate(spawnQueue[i], spawnLocation.position, Quaternion.identity);
+            simulationManager.EnemiesSpawned++;
             yield return new WaitForSeconds(1);
         }
     }
@@ -105,6 +108,16 @@ public class OffensePurchaseManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             SpawnEnemies();
+        }
+        if(playerController.currentGameState != GameState.PlayerTwoTurn)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 }

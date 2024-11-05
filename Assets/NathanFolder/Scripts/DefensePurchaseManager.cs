@@ -7,6 +7,7 @@ public class DefensePurchaseManager : MonoBehaviour
     GameObject currentSelectedSquare;
     bool menuIsOpen = false;
     [SerializeField] GameObject[] towerPrefabs;
+    [SerializeField] PlayerController playerController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

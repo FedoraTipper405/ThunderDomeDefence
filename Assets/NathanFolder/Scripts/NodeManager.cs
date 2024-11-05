@@ -5,4 +5,5 @@ using UnityEngine;
 public class NodeManager : Singleton<NodeManager>
 {
     public List<Transform> NodeList = new();
+    public SimulationManager simManager;
 }

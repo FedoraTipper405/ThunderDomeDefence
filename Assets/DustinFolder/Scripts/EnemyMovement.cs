@@ -9,12 +9,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float startDelay = 1f; // Delay before an enemy starts moving
 
     public List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
+    SimulationManager simManager;
     private int currentNodeIndex = 0;
     private bool isMoving = false;
     private bool findingNodes = true;
     private int indexOfNode = 1;
     private void Start()
     {
+        simManager = NodeManager.Instance.simManager;
         // Hide path nodes in-game but keep them visible in the editor
         foreach (Transform node in pathNodes)
         {
@@ -82,5 +84,9 @@ public class EnemyMovement : MonoBehaviour
             EnemyMovement nextEnemy = enemyList[0];
             nextEnemy.Invoke(nameof(StartMoving), nextEnemy.startDelay);
         }
+    }
+    private void OnDestroy()
+    {
+        simManager.Kills++;
     }
 }
