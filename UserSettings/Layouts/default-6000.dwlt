@@ -458,11 +458,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b8af0000
     m_LastClickedID: 44984
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000
-=======
     m_ExpandedIDs: 
->>>>>>> origin/NathanBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1257,7 +1253,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 1.5764403, y: 0.71885, z: 0.008982225}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
@@ -1309,7 +1305,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 9.101781
     speed: 2
     m_Value: 10
   m_Ortho:

@@ -4,14 +4,15 @@ using System.Linq;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform[] pathNodes; // Nodes defining the path for enemies
+    [SerializeField] private List<Transform> pathNodes = new List<Transform>(); // Nodes defining the path for enemies
     [SerializeField] private float speed = 2f; // Speed of the enemy unit
     [SerializeField] private float startDelay = 1f; // Delay before an enemy starts moving
 
-    private static List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
+    public List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
     private int currentNodeIndex = 0;
     private bool isMoving = false;
-
+    private bool findingNodes = true;
+    private int indexOfNode = 1;
     private void Start()
     {
         // Hide path nodes in-game but keep them visible in the editor
@@ -22,23 +23,25 @@ public class EnemyMovement : MonoBehaviour
                 node.gameObject.SetActive(false);
             }
         }
-
-        // Add this enemy to the list
-        enemyList.Add(this);
-
-        // Sort the list based on startDelay in ascending order
-        enemyList = enemyList.OrderBy(enemy => enemy.startDelay).ToList();
-
-        // Start checking the list
-        if (enemyList[0] == this)
+        if (NodeManager.Instance != null)
         {
-            Invoke(nameof(StartMoving), startDelay);
-        }
+            pathNodes = NodeManager.Instance.NodeList;
+        }//// Add this enemy to the list
+         //enemyList.Insert(0,this);
+
+        //// Sort the list based on startDelay in ascending order
+        //enemyList = enemyList.OrderBy(enemy => enemy.startDelay).ToList();
+
+        //// Start checking the list
+        //if (enemyList[0] == this)
+        //{
+        Invoke(nameof(StartMoving), startDelay);
+        //}
     }
 
     private void Update()
     {
-        if (!isMoving || pathNodes.Length < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
+        if (!isMoving || pathNodes.Count < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
 
         MoveTowards(pathNodes[currentNodeIndex].position);
 
@@ -48,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
             currentNodeIndex++;
 
             // Check if the enemy has reached the last node
-            if (currentNodeIndex >= pathNodes.Length)
+            if (currentNodeIndex >= pathNodes.Count)
             {
                 OnReachedEnd();
             }

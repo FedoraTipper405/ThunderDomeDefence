@@ -9,6 +9,8 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] GameObject HeavyPrefab;
     [SerializeField] GameObject BusPrefab;
     [SerializeField] List<GameObject> spawnQueue = new List<GameObject>();
+    [SerializeField] List<EnemyMovement> tempEnemyList = new List<EnemyMovement>();
+    [SerializeField] Transform spawnLocation;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -80,6 +82,19 @@ public class OffensePurchaseManager : MonoBehaviour
         }
         
     }
+    public void SpawnEnemies()
+    {
+        StartCoroutine(SpawnDelay());
+        
+    }
+    IEnumerator SpawnDelay()
+    {
+        for (int i = 0 ; i < spawnQueue.Count; i++)
+        {
+            GameObject lastSpawnedEnemy = Instantiate(spawnQueue[i], spawnLocation.position, Quaternion.identity);
+            yield return new WaitForSeconds(1);
+        }
+    }
     public void ClearAll()
     {
         spawnQueue.Clear();
@@ -87,7 +102,10 @@ public class OffensePurchaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnEnemies();
+        }
     }
 }
 
