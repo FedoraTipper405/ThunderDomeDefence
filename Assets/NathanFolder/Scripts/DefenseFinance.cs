@@ -2,19 +2,12 @@ using UnityEngine;
 
 public class DefenseFinance : MonoBehaviour
 {
-    int defenseMoney;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int defenseMoney; // The total defense money
+
+    // Adds the specified amount of money to the defender
     public void AddToDefenderMoney(int moneyToAdd)
     {
         defenseMoney += moneyToAdd;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log($"Added {moneyToAdd} to defender money. Total {defenseMoney}");
     }
 }
