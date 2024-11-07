@@ -9938,6 +9938,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2093508214}
     m_Modifications:
+    - target: {fileID: 2628855957552555155, guid: ad79b49341bfd794282c0821619f1e88, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4606942865806258332, guid: ad79b49341bfd794282c0821619f1e88, type: 3}
       propertyPath: m_Name
       value: TowerArea (4)
@@ -10126,6 +10130,7 @@ MonoBehaviour:
   defenseFinance: {fileID: 1097037534}
   offenseFinance: {fileID: 109701933}
   defenseHealth: {fileID: 416671269}
+  motorCyclePrefab: {fileID: 112754877849986109, guid: 0be9212bbb04fe84b88c75d57cc7dee8, type: 3}
 --- !u!4 &1458966295
 Transform:
   m_ObjectHideFlags: 0
