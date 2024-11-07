@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 07ed46e090e8e664cb2b9fc919d0f5c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9192851587080511714
+    second: TDDTitle_0
+  - first:
+      213: 6893119780207466913
+    second: TDDTitle_1
+  - first:
+      213: 5979054525511326505
+    second: TDDTitle_2
+  - first:
+      213: -2205115387359280864
+    second: TDDTitle_3
+  - first:
+      213: -2907928689883295986
+    second: TDDTitle_4
+  - first:
+      213: 3473267362047559830
+    second: TDDTitle_5
+  - first:
+      213: -8659746681191702810
+    second: TDDTitle_6
+  - first:
+      213: -1933430118952716476
+    second: TDDTitle_7
+  - first:
+      213: 7402374059662266881
+    second: TDDTitle_8
+  - first:
+      213: 4049314011218334115
+    second: TDDTitle_9
+  - first:
+      213: 7028608906175861454
+    second: TDDTitle_10
+  - first:
+      213: -6393176944383413109
+    second: TDDTitle_11
+  - first:
+      213: 4240253712317074886
+    second: TDDTitle_12
+  - first:
+      213: -981692945947349998
+    second: TDDTitle_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TDDTitle_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 614
+        width: 165
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0e1d800d1939f70800000000000000
+      internalID: 9192851587080511714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 614
+        width: 200
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a91c753be749af50800000000000000
+      internalID: 6893119780207466913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_2
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 614
+        width: 177
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b5bcd996ed9f250800000000000000
+      internalID: 5979054525511326505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_3
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 614
+        width: 168
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021c3b70d3bd561e0800000000000000
+      internalID: -2205115387359280864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_4
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 613
+        width: 351
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fc65f6346f4a7d0800000000000000
+      internalID: -2907928689883295986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_5
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 613
+        width: 170
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6988dcc7346833030800000000000000
+      internalID: 3473267362047559830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_6
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 614
+        width: 174
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee53b6564662d780800000000000000
+      internalID: -8659746681191702810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_7
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 609
+        width: 171
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44738c1fc831b25e0800000000000000
+      internalID: -1933430118952716476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_8
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 614
+        width: 264
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1025cb0ecf38ab660800000000000000
+      internalID: 7402374059662266881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_9
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 613
+        width: 181
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a15ea693ad023830800000000000000
+      internalID: 4049314011218334115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 88
+        width: 718
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec252cd9f82aa8160800000000000000
+      internalID: 7028608906175861454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_11
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 89
+        width: 176
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b843fcb017fd647a0800000000000000
+      internalID: -6393176944383413109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_12
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 89
+        width: 173
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cdc038194868da30800000000000000
+      internalID: 4240253712317074886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDTitle_13
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 88
+        width: 190
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c2d4687735062f0800000000000000
+      internalID: -981692945947349998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TDDTitle_0: 9192851587080511714
+      TDDTitle_1: 6893119780207466913
+      TDDTitle_10: 7028608906175861454
+      TDDTitle_11: -6393176944383413109
+      TDDTitle_12: 4240253712317074886
+      TDDTitle_13: -981692945947349998
+      TDDTitle_2: 5979054525511326505
+      TDDTitle_3: -2205115387359280864
+      TDDTitle_4: -2907928689883295986
+      TDDTitle_5: 3473267362047559830
+      TDDTitle_6: -8659746681191702810
+      TDDTitle_7: -1933430118952716476
+      TDDTitle_8: 7402374059662266881
+      TDDTitle_9: 4049314011218334115
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

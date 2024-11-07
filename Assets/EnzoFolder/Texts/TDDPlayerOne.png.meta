@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 817fc49123d4a734caae535b808a5670
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5350909776962561989
+    second: TDDPlayerOne_0
+  - first:
+      213: 4165268427084921924
+    second: TDDPlayerOne_1
+  - first:
+      213: -8004021319414313004
+    second: TDDPlayerOne_2
+  - first:
+      213: 4449731343521317099
+    second: TDDPlayerOne_3
+  - first:
+      213: 4141716191370817738
+    second: TDDPlayerOne_4
+  - first:
+      213: 7343098016598624576
+    second: TDDPlayerOne_5
+  - first:
+      213: 5806433739403686146
+    second: TDDPlayerOne_6
+  - first:
+      213: -8425269389332443822
+    second: TDDPlayerOne_7
+  - first:
+      213: 7074813170540362786
+    second: TDDPlayerOne_8
+  - first:
+      213: 2005974608027697450
+    second: TDDPlayerOne_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TDDPlayerOne_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 338
+        width: 166
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b385bfe78efbdb5b0800000000000000
+      internalID: -5350909776962561989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 338
+        width: 329
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44cfb8ed0910ec930800000000000000
+      internalID: 4165268427084921924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_2
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 338
+        width: 178
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df08a164010ce090800000000000000
+      internalID: -8004021319414313004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 337
+        width: 181
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0828cc41f90cd30800000000000000
+      internalID: 4449731343521317099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_4
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 337
+        width: 170
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0342baee45a7930800000000000000
+      internalID: 4141716191370817738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_5
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 338
+        width: 99
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0498c3e9dbce7e560800000000000000
+      internalID: 7343098016598624576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_6
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 332
+        width: 277
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201fff0e8b8949050800000000000000
+      internalID: 5806433739403686146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_7
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 338
+        width: 144
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d0edf112e631b80800000000000000
+      internalID: -8425269389332443822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_8
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 338
+        width: 176
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c305a3819ce2260800000000000000
+      internalID: 7074813170540362786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TDDPlayerOne_9
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 338
+        width: 173
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21c1f32747a6db10800000000000000
+      internalID: 2005974608027697450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TDDPlayerOne_0: -5350909776962561989
+      TDDPlayerOne_1: 4165268427084921924
+      TDDPlayerOne_2: -8004021319414313004
+      TDDPlayerOne_3: 4449731343521317099
+      TDDPlayerOne_4: 4141716191370817738
+      TDDPlayerOne_5: 7343098016598624576
+      TDDPlayerOne_6: 5806433739403686146
+      TDDPlayerOne_7: -8425269389332443822
+      TDDPlayerOne_8: 7074813170540362786
+      TDDPlayerOne_9: 2005974608027697450
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
