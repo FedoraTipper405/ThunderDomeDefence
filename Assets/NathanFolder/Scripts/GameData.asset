@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5db17130edbc5419c6ea5e1105f4bb, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  PlayerOneDefense: 0
-  PlayerTwoDefense: 1
+  PlayerOneDefense: 1
+  PlayerTwoDefense: 0
   PlayerOneScore: 0
-  PlayerTwoScore: 1
-  Round: 2
+  PlayerTwoScore: 0
+  Round: 1
