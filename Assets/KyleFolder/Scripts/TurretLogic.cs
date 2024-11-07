@@ -80,7 +80,8 @@ public class TurretLogic : MonoBehaviour
         laserLine.SetPosition(0, _firingPoint.position);
         laserLine.SetPosition(1, _enemytarget.position);
         StartCoroutine(ShowLaser());
-        Destroy(_enemytarget.gameObject);
+        _enemytarget.gameObject.GetComponent<EnemyMovement>().ReduceHealth(_turretData._bulletDamage);
+       // Destroy(_enemytarget.gameObject);
     }
 
     private void Shoot()

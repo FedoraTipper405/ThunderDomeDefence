@@ -42,7 +42,8 @@ public class BulletLogic : MonoBehaviour
             {
                 ExplodingBullet();
             }
-            Destroy(collision.transform.gameObject);
+            collision.GetComponent<EnemyMovement>().ReduceHealth(_bulletDamage);
+            //  Destroy(collision.transform.gameObject);
             Destroy(gameObject);
         }
     }
@@ -54,7 +55,7 @@ public class BulletLogic : MonoBehaviour
         {
             if (enemy.gameObject.CompareTag("Enemy"))
             {
-                Destroy(enemy.transform.gameObject);
+               enemy.GetComponent<EnemyMovement>().ReduceHealth(_bulletDamage);
             }
         }
     }

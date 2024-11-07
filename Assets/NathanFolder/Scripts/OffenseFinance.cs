@@ -2,19 +2,16 @@ using UnityEngine;
 
 public class OffenseFinance : MonoBehaviour
 {
-    int offenseMoney;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-    public void AddToOffenseMoney(int moneyToAdd)
+    [SerializeField] public float offenseMoney; // Total money for the offense
+
+    // Adds the specified amount of money to the offense
+    public void AddToOffenseMoney(float moneyToAdd)
     {
         offenseMoney += moneyToAdd;
+        Debug.Log($"Added {moneyToAdd} to offenseMoney. Total: {offenseMoney}");
     }
-    // Update is called once per frame
-    void Update()
+    public void TakeAwayOffenseMoney( float moneyToRemove)
     {
-        
+        offenseMoney -= moneyToRemove;
     }
 }

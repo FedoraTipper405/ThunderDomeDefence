@@ -4,16 +4,25 @@ using System.Linq;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform[] pathNodes; // Nodes defining the path for enemies
-    [SerializeField] private float speed = 2f; // Speed of the enemy unit
-    [SerializeField] private float startDelay = 1f; // Delay before an enemy starts moving
-
-    private static List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
+    [SerializeField] EnemyData enemyData;
+    [SerializeField] private List<Transform> pathNodes = new List<Transform>(); // Nodes defining the path for enemies
+    [SerializeField] private float speed => enemyData.speed; // Speed of the enemy unit
+    private float startDelay = 0f; // Delay before an enemy starts moving
+    private float health;
+    public List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
+    
+    SimulationManager simManager;
+    OffenseFinance offenseFinance;
+    DefenseFinance defenseFinance;
+    DefenseHealth defenseHealth;
     private int currentNodeIndex = 0;
     private bool isMoving = false;
-
+    private bool findingNodes = true;
+    private int indexOfNode = 1;
     private void Start()
     {
+        health = enemyData.health;
+       
         // Hide path nodes in-game but keep them visible in the editor
         foreach (Transform node in pathNodes)
         {
@@ -22,23 +31,29 @@ public class EnemyMovement : MonoBehaviour
                 node.gameObject.SetActive(false);
             }
         }
-
-        // Add this enemy to the list
-        enemyList.Add(this);
-
-        // Sort the list based on startDelay in ascending order
-        enemyList = enemyList.OrderBy(enemy => enemy.startDelay).ToList();
-
-        // Start checking the list
-        if (enemyList[0] == this)
+        if (NodeManager.Instance != null)
         {
-            Invoke(nameof(StartMoving), startDelay);
-        }
+            pathNodes = NodeManager.Instance.NodeList;
+            simManager = NodeManager.Instance.simManager;
+            offenseFinance = NodeManager.Instance.offenseFinance;
+            defenseFinance = NodeManager.Instance.defenseFinance;
+            defenseHealth = NodeManager.Instance.defenseHealth;
+        }//// Add this enemy to the list
+         //enemyList.Insert(0,this);
+
+        //// Sort the list based on startDelay in ascending order
+        //enemyList = enemyList.OrderBy(enemy => enemy.startDelay).ToList();
+
+        //// Start checking the list
+        //if (enemyList[0] == this)
+        //{
+        Invoke(nameof(StartMoving), startDelay);
+        //}
     }
 
     private void Update()
     {
-        if (!isMoving || pathNodes.Length < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
+        if (!isMoving || pathNodes.Count < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
 
         MoveTowards(pathNodes[currentNodeIndex].position);
 
@@ -48,13 +63,21 @@ public class EnemyMovement : MonoBehaviour
             currentNodeIndex++;
 
             // Check if the enemy has reached the last node
-            if (currentNodeIndex >= pathNodes.Length)
+            if (currentNodeIndex >= pathNodes.Count)
             {
                 OnReachedEnd();
             }
         }
     }
-
+    public void ReduceHealth(float damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            defenseFinance.AddToDefenderMoney(enemyData.moneyForKill);
+            Destroy(gameObject);
+        }
+    }
     private void MoveTowards(Vector3 targetPosition)
     {
         // Move towards the target node position
@@ -65,6 +88,9 @@ public class EnemyMovement : MonoBehaviour
     private void OnReachedEnd()
     {
         Debug.Log("Enemy reached the end!");
+        offenseFinance.AddToOffenseMoney(enemyData.rewardForReachingEnd);
+        defenseHealth.TakeDamage(enemyData.damage);
+        defenseHealth.UpdateWallHealthText();
         Destroy(gameObject);
     }
 
@@ -79,5 +105,9 @@ public class EnemyMovement : MonoBehaviour
             EnemyMovement nextEnemy = enemyList[0];
             nextEnemy.Invoke(nameof(StartMoving), nextEnemy.startDelay);
         }
+    }
+    private void OnDestroy()
+    {
+        simManager.Kills++;
     }
 }
