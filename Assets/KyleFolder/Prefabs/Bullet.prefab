@@ -169,7 +169,7 @@ MonoBehaviour:
   _bulletSpeed: 0
   _bulletDamage: 0
   _canExplode: 0
-  _explosionSize: 3
+  _explosionSize: 1.5
   _lifeSpan: 0.5
   startPosition: {x: 0, y: 0}
   _lastenemyPosition: {x: 0, y: 0}
