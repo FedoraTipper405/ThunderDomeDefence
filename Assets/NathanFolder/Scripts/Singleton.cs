@@ -14,7 +14,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 var singletonObject = new GameObject(typeof(T).Name);
                 _instance = singletonObject.AddComponent<T>();
                 // Make sure the singleton instance persists across scene loads
-                DontDestroyOnLoad(singletonObject);
+                //DontDestroyOnLoad(singletonObject);
             }
             // Return the instance
             return _instance;
@@ -32,7 +32,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             {
                 transform.SetParent(null);
             }
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {

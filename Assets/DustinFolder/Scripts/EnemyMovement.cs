@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isMoving = false;
     private bool findingNodes = true;
     private int indexOfNode = 1;
-    private void Start()
+    private void Awake()
     {
         health = enemyData.health;
        

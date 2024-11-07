@@ -22,6 +22,7 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     [SerializeField] SimulationManager simulationManager;
     [SerializeField] TMP_Text enemyList;
+    [SerializeField] WinManager winManager;
     string enemies;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -232,8 +233,12 @@ public class OffensePurchaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(spawnQueue.Count <= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        if (finance.offenseMoney < RegularData.unitCost && spawnQueue.Count == 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        {
+            winManager.DefenseWins();
+            winManager.NextRound();
+        }
+        if (spawnQueue.Count <= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
         {
             playerController.ShowContinueButton(false);
         }
