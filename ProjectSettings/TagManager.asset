@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - EmptySquare
-  serializedVersion: 3
-  tags:
-  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -44,6 +41,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3756003719
+    locked: 0
+  - name: Elements
+    uniqueID: 1239781017
     locked: 0
   m_RenderingLayers:
   - Default
