@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SniperTurretButton_0: -940201507616987227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

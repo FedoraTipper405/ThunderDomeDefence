@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] EnemyData enemyData;
     [SerializeField] private List<Transform> pathNodes = new List<Transform>(); // Nodes defining the path for enemies
-    [SerializeField] private float speed => enemyData.speed; // Speed of the enemy unit
+    [SerializeField] private float speed; // Speed of the enemy unit
     private float startDelay = 0f; // Delay before an enemy starts moving
     private float health;
     public List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
@@ -55,6 +55,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!isMoving || pathNodes.Count < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
 
+        if(transform.position.x <= -10)
+        {
+            speed = 2;
+        }
+        else
+        {
+            speed = enemyData.speed;
+        }
         MoveTowards(pathNodes[currentNodeIndex].position);
 
         // Check if the enemy reached the current node
@@ -71,7 +79,10 @@ public class EnemyMovement : MonoBehaviour
     }
     public void ReduceHealth(float damage)
     {
-        health -= damage;
+        if(transform.position.x > -10)
+        {
+            health -= damage;
+        }
         if(health <= 0)
         {
             defenseFinance.AddToDefenderMoney(enemyData.moneyForKill);

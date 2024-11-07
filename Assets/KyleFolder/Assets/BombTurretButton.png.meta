@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BombTurretButton_0: -7502226196249827202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

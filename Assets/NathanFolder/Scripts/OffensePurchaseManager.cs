@@ -142,6 +142,14 @@ public class OffensePurchaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(spawnQueue.Count <= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        {
+            playerController.ShowContinueButton(false);
+        }
+        else if(spawnQueue.Count >= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        {
+            playerController.ShowContinueButton(true);
+        }
         if(playerController.currentGameState != GameState.PlayerTwoTurn)
         {
             transform.GetChild(0).gameObject.SetActive(false);

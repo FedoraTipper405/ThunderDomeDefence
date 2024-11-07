@@ -23,17 +23,23 @@ public class PlayerController : MonoBehaviour
     {
        
     }
+    public void ShowContinueButton(bool doShow)
+    {
+        continueButton.gameObject.SetActive(doShow);
+    }
     public void ContinueToNextStage()
     {
         if(GameState.PlayerOneTurn == currentGameState)
         {
             currentGameState = GameState.PlayerTwoTurn;
+            continueButton.gameObject.SetActive(false);
+
         }
         else if(GameState.PlayerTwoTurn == currentGameState)
         {
-            continueButton.gameObject.SetActive(false);
             currentGameState = GameState.Simulating;
             offensePurchaseManager.SpawnEnemies();
+            continueButton.gameObject.SetActive(false);
         }
         else if(GameState.Simulating == currentGameState)
         {

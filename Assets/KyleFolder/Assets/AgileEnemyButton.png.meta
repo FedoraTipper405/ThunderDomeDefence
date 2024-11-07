@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AgileEnemyButton_0: 1391292935963822282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

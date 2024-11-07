@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AutoCannonTurretButton_0: -1298820786760384936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

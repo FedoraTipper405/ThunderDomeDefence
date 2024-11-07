@@ -42,10 +42,11 @@ public class DefensePurchaseManager : MonoBehaviour
         {
             GameObject towerToSpawn = Instantiate(towerPrefabs[towerIndex - 1], currentSelectedSquare.transform.position, Quaternion.identity);
             defenseFinance.RemoveDefenderMoney(towerData[towerIndex-1]._towerCost);
+            currentSelectedSquare.gameObject.SetActive(false);
         }
        
        // currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);
-        currentSelectedSquare.gameObject.SetActive(false);
+       
     }
     // Update is called once per frame
     void Update()
