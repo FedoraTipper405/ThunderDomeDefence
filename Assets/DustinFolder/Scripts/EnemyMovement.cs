@@ -4,19 +4,26 @@ using System.Linq;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] EnemyData enemyData;
     [SerializeField] private List<Transform> pathNodes = new List<Transform>(); // Nodes defining the path for enemies
-    [SerializeField] private float speed = 2f; // Speed of the enemy unit
-    [SerializeField] private float startDelay = 1f; // Delay before an enemy starts moving
-
+    [SerializeField] private float speed => enemyData.speed; // Speed of the enemy unit
+    private float startDelay = 0f; // Delay before an enemy starts moving
+    private float health;
     public List<EnemyMovement> enemyList = new List<EnemyMovement>(); // List for enemies waiting to start
+    
     SimulationManager simManager;
+    OffenseFinance offenseFinance;
+    DefenseFinance defenseFinance;
     private int currentNodeIndex = 0;
     private bool isMoving = false;
     private bool findingNodes = true;
     private int indexOfNode = 1;
     private void Start()
     {
+        health = enemyData.health;
         simManager = NodeManager.Instance.simManager;
+        offenseFinance = NodeManager.Instance.offenseFinance;
+        defenseFinance = NodeManager.Instance.defenseFinance;
         // Hide path nodes in-game but keep them visible in the editor
         foreach (Transform node in pathNodes)
         {
@@ -59,7 +66,15 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-
+    public void ReduceHealth(float damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            defenseFinance.AddToDefenderMoney(enemyData.moneyForKill);
+            Destroy(gameObject);
+        }
+    }
     private void MoveTowards(Vector3 targetPosition)
     {
         // Move towards the target node position
@@ -70,6 +85,7 @@ public class EnemyMovement : MonoBehaviour
     private void OnReachedEnd()
     {
         Debug.Log("Enemy reached the end!");
+        offenseFinance.AddToOffenseMoney(enemyData.rewardForReachingEnd);
         Destroy(gameObject);
     }
 

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798fffb5e5219b94f958eea6de111128, type: 3}
   m_Name: HeavyData
   m_EditorClassIdentifier: 
-  health: 0
-  speed: 0
-  moneyForKill: 0
-  moneyPerDistance: 0
-  moneyPerTime: 0
+  health: 100
+  speed: 1
+  damage: 3
+  moneyForKill: 100
+  moneyPerDistance: 3.5
+  unitCost: 100
+  rewardForReachingEnd: 100

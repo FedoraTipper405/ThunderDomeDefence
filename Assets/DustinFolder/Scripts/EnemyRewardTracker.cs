@@ -38,7 +38,7 @@ public class EnemyRewardTracker : MonoBehaviour
         float moneyForDistance = distanceTraveled * enemyData.moneyPerDistance;
         if (moneyForDistance > 0)
         {
-            offenseFinance.AddToOffenseMoney(Mathf.FloorToInt(moneyForDistance));
+            offenseFinance.AddToOffenseMoney(moneyForDistance);
             distanceTraveled = 0; // Reset distance counter after adding money
         }
     }

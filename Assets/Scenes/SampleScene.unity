@@ -1013,6 +1013,7 @@ GameObject:
   - component: {fileID: 109701930}
   - component: {fileID: 109701928}
   - component: {fileID: 109701932}
+  - component: {fileID: 109701933}
   m_Layer: 5
   m_Name: OffensePurchaseScreen
   m_TagString: Untagged
@@ -1093,15 +1094,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562ee87384802c54b8b2b54b0dd7f78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AgilePrefab: {fileID: 2068786272887228872, guid: 7f3e2dc0081e08243aa0aaa19f3a7e10, type: 3}
-  RegularPrefab: {fileID: 3087426287329240685, guid: bae1324f420ae4847b89012764dc95ca, type: 3}
-  HeavyPrefab: {fileID: 3087426287329240685, guid: 673db19ff14255b4593923cbebfa6f47, type: 3}
-  BusPrefab: {fileID: 3087426287329240685, guid: d30428eeb3e2b204f8b666cf507fa58d, type: 3}
+  AgilePrefab: {fileID: 4380455816401955208, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+  RegularPrefab: {fileID: 4682800363319556424, guid: 4f10a296d89073d4db3dfde58d52a5cf, type: 3}
+  HeavyPrefab: {fileID: 1641123389457834876, guid: 680651f863f6d8048910f27409f24be1, type: 3}
+  BusPrefab: {fileID: 2728570199451091743, guid: 0a18ff6b4f68bc440a1e35576d27d2dc, type: 3}
+  AgileData: {fileID: 11400000, guid: ee59ce05e56e3114d9f299e6c9316a43, type: 2}
+  RegularData: {fileID: 11400000, guid: 963ec63f42aa3174791b7e7fcca6478d, type: 2}
+  HeavyData: {fileID: 11400000, guid: 5f086a7003600be44a1abf0deb237c2a, type: 2}
+  BusData: {fileID: 11400000, guid: 35921517d58ac204f8a910eef9aa113b, type: 2}
+  finance: {fileID: 109701933}
   spawnQueue: []
   tempEnemyList: []
   spawnLocation: {fileID: 1862100554}
   playerController: {fileID: 861417556}
   simulationManager: {fileID: 861417559}
+--- !u!114 &109701933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109701927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df5cd9b013295643b5f70347ce9d275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offenseMoney: 1000
 --- !u!1 &123630736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,6 +6335,7 @@ GameObject:
   - component: {fileID: 1097037531}
   - component: {fileID: 1097037529}
   - component: {fileID: 1097037533}
+  - component: {fileID: 1097037534}
   m_Layer: 5
   m_Name: DefensePurchaseScreen
   m_TagString: Untagged
@@ -6401,6 +6421,19 @@ MonoBehaviour:
   - {fileID: 1936994928796594160, guid: 7f16194713fbd9e4c9e1b5776e62dbaf, type: 3}
   - {fileID: 1054369342775440911, guid: cdaf6109213ee214686d41ceabb92c72, type: 3}
   playerController: {fileID: 861417556}
+--- !u!114 &1097037534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097037528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888bb2df613d8c5478f92f2021ec937d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMoney: 1000
 --- !u!4 &1098135450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1953170070174079475, guid: 327630415895b45419e2570efc52f54a, type: 3}
@@ -8578,6 +8611,8 @@ MonoBehaviour:
   - {fileID: 1247840193}
   - {fileID: 159698332}
   simManager: {fileID: 861417559}
+  defenseFinance: {fileID: 1097037534}
+  offenseFinance: {fileID: 109701933}
 --- !u!4 &1458966295
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetingRange: 6
   _timeBetweenShots: 2
-  _bulletDamage: 0
+  _bulletDamage: 50
   _bulletSpeed: 5
   _bulletAccuracy: 0
   _canExplode: 0
