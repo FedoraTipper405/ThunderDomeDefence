@@ -7,6 +7,7 @@ public class EnemyData : ScriptableObject
     public float health; // Health of the enemy
     public float speed; // Speed of the enemy
     public int damage;
+    public bool canSpawnMotorCycles;
 
     [Header("Rewards")]
     public int moneyForKill; // Money rewarded for killing the enemy

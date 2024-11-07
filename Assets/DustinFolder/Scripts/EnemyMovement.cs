@@ -15,10 +15,14 @@ public class EnemyMovement : MonoBehaviour
     OffenseFinance offenseFinance;
     DefenseFinance defenseFinance;
     DefenseHealth defenseHealth;
-    private int currentNodeIndex = 0;
+    public int currentNodeIndex = 0;
     private bool isMoving = false;
     private bool findingNodes = true;
     private int indexOfNode = 1;
+    private bool canSpawnMotorCycles => enemyData.canSpawnMotorCycles;
+    private GameObject motorCycleEnemy;
+    private Vector3 randomMotorCyclePos;
+
     private void Start()
     {
         health = enemyData.health;
@@ -38,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
             offenseFinance = NodeManager.Instance.offenseFinance;
             defenseFinance = NodeManager.Instance.defenseFinance;
             defenseHealth = NodeManager.Instance.defenseHealth;
+            motorCycleEnemy = NodeManager.Instance.motorCyclePrefab;
         }//// Add this enemy to the list
          //enemyList.Insert(0,this);
 
@@ -82,6 +87,19 @@ public class EnemyMovement : MonoBehaviour
         if(transform.position.x > -10)
         {
             health -= damage;
+        }
+        if(health <= 0 && canSpawnMotorCycles)
+        {
+            GameObject lastSpawned;
+            for (int i = 0; i <= 3; i++)
+            {
+                randomMotorCyclePos = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+                lastSpawned = Instantiate(motorCycleEnemy, transform.position + randomMotorCyclePos, Quaternion.identity);
+                lastSpawned.GetComponent<EnemyMovement>().currentNodeIndex = currentNodeIndex;
+            }
+            
+            defenseFinance.AddToDefenderMoney(enemyData.moneyForKill);
+            Destroy(gameObject);
         }
         if(health <= 0)
         {

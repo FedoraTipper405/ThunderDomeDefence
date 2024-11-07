@@ -9,4 +9,5 @@ public class NodeManager : Singleton<NodeManager>
     public DefenseFinance defenseFinance;
     public OffenseFinance offenseFinance;
     public DefenseHealth defenseHealth;
+    public GameObject motorCyclePrefab;
 }
