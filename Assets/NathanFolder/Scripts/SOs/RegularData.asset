@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798fffb5e5219b94f958eea6de111128, type: 3}
   m_Name: RegularData
   m_EditorClassIdentifier: 
-  health: 100
-  speed: 2
+  health: 250
+  speed: 2.25
   damage: 2
-  moneyForKill: 100
+  moneyForKill: 200
   moneyPerDistance: 3.5
   unitCost: 100
   rewardForReachingEnd: 100

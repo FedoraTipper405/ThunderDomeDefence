@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d28b63d4f170e4591b93463c64e47c, type: 3}
   m_Name: SniperTurretData
   m_EditorClassIdentifier: 
-  _towerCost: 100
-  _targetingRange: 6
-  _timeBetweenShots: 2
-  _bulletDamage: 50
+  _towerCost: 600
+  _targetingRange: 10
+  _timeBetweenShots: 4
+  _bulletDamage: 150
   _bulletSpeed: 5
   _bulletAccuracy: 0
   _canExplode: 0

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AgileData
   m_EditorClassIdentifier: 
   health: 100
-  speed: 4
+  speed: 3.5
   damage: 1
-  moneyForKill: 100
-  moneyPerDistance: 3.5
-  unitCost: 100
+  moneyForKill: 150
+  moneyPerDistance: 5.25
+  unitCost: 150
   rewardForReachingEnd: 100
