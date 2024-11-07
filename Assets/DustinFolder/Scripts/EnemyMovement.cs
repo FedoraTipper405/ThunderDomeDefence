@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     SimulationManager simManager;
     OffenseFinance offenseFinance;
     DefenseFinance defenseFinance;
+    DefenseHealth defenseHealth;
     private int currentNodeIndex = 0;
     private bool isMoving = false;
     private bool findingNodes = true;
@@ -21,9 +22,7 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         health = enemyData.health;
-        simManager = NodeManager.Instance.simManager;
-        offenseFinance = NodeManager.Instance.offenseFinance;
-        defenseFinance = NodeManager.Instance.defenseFinance;
+       
         // Hide path nodes in-game but keep them visible in the editor
         foreach (Transform node in pathNodes)
         {
@@ -35,6 +34,10 @@ public class EnemyMovement : MonoBehaviour
         if (NodeManager.Instance != null)
         {
             pathNodes = NodeManager.Instance.NodeList;
+            simManager = NodeManager.Instance.simManager;
+            offenseFinance = NodeManager.Instance.offenseFinance;
+            defenseFinance = NodeManager.Instance.defenseFinance;
+            defenseHealth = NodeManager.Instance.defenseHealth;
         }//// Add this enemy to the list
          //enemyList.Insert(0,this);
 
@@ -86,6 +89,8 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("Enemy reached the end!");
         offenseFinance.AddToOffenseMoney(enemyData.rewardForReachingEnd);
+        defenseHealth.TakeDamage(enemyData.damage);
+        defenseHealth.UpdateWallHealthText();
         Destroy(gameObject);
     }
 

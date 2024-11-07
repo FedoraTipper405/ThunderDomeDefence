@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class DefensePurchaseManager : MonoBehaviour
 {
-    int defenseMoney = 100;
+   // int defenseMoney = 100;
     GameObject currentSelectedSquare;
     bool menuIsOpen = false;
     [SerializeField] GameObject[] towerPrefabs;
+    [SerializeField] TurretData[] towerData;
     [SerializeField] PlayerController playerController;
+    [SerializeField] DefenseFinance defenseFinance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,7 +38,12 @@ public class DefensePurchaseManager : MonoBehaviour
     }
     public void PurchaseTowerType(int towerIndex)
     {
-        GameObject towerToSpawn = Instantiate(towerPrefabs[towerIndex-1],currentSelectedSquare.transform.position, Quaternion.identity);
+        if (towerData[towerIndex-1]._towerCost <= defenseFinance.defenseMoney)
+        {
+            GameObject towerToSpawn = Instantiate(towerPrefabs[towerIndex - 1], currentSelectedSquare.transform.position, Quaternion.identity);
+            defenseFinance.RemoveDefenderMoney(towerData[towerIndex-1]._towerCost);
+        }
+       
        // currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);
         currentSelectedSquare.gameObject.SetActive(false);
     }

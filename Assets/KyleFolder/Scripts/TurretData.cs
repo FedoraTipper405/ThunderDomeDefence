@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TurretData", menuName = "SOs/TurretData")]
 public class TurretData : ScriptableObject
 {
+    [SerializeField] public float _towerCost;
     [SerializeField] public float _targetingRange;
     [SerializeField] public float _timeBetweenShots;
     [SerializeField] public float _bulletDamage;

@@ -8,4 +8,5 @@ public class NodeManager : Singleton<NodeManager>
     public SimulationManager simManager;
     public DefenseFinance defenseFinance;
     public OffenseFinance offenseFinance;
+    public DefenseHealth defenseHealth;
 }
