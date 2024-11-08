@@ -17,3 +17,4 @@ MonoBehaviour:
   PlayerOneScore: 0
   PlayerTwoScore: 0
   Round: 0
+  PlayerOneWon: 0

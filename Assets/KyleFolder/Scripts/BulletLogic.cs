@@ -60,6 +60,5 @@ public class BulletLogic : MonoBehaviour
                enemy.GetComponent<EnemyMovement>().ReduceHealth(_bulletDamage);
             }
         }
-        Destroy(_explosion);
     }
 }
