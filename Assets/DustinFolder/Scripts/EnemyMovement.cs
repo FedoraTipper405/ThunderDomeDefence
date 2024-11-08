@@ -23,6 +23,8 @@ public class EnemyMovement : MonoBehaviour
     private bool canSpawnMotorCycles => enemyData.canSpawnMotorCycles;
     private GameObject motorCycleEnemy;
     private Vector3 randomMotorCyclePos;
+    float lastXPos;
+    float lastYPos;
 
     private void Start()
     {
@@ -59,6 +61,26 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        
+        float xDelta = transform.position.x - lastXPos;
+        float yDelta = transform.position.y - lastYPos;
+        if(xDelta > Mathf.Abs(yDelta))
+        {
+            transform.eulerAngles = new Vector3(0,0,0);
+            Debug.Log("Right");
+        }else if(yDelta > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 90);
+            Debug.Log("Up");
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, -90);
+            Debug.Log("Down");
+        }
+        lastXPos = transform.position.x;
+        lastYPos = transform.position.y;
+
         if (!isMoving || pathNodes.Count < 2) return; // Ensure there is a valid path with at least two nodes and the enemy is allowed to move
 
         if(transform.position.x <= -10)
@@ -92,8 +114,9 @@ public class EnemyMovement : MonoBehaviour
         if(health <= 0 && canSpawnMotorCycles)
         {
             GameObject lastSpawned;
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i < 3; i++)
             {
+                simManager.EnemiesSpawned++;
                 randomMotorCyclePos = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
                 lastSpawned = Instantiate(motorCycleEnemy, transform.position + randomMotorCyclePos, Quaternion.identity);
                 lastSpawned.GetComponent<EnemyMovement>().currentNodeIndex = currentNodeIndex;

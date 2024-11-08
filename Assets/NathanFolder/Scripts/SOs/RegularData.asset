@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: RegularData
   m_EditorClassIdentifier: 
   health: 250
-  speed: 2.25
-  damage: 2
-  moneyForKill: 200
-  moneyPerDistance: 3.5
-  unitCost: 100
-  rewardForReachingEnd: 100
+  speed: 2.5
+  damage: 1
+  canSpawnMotorCycles: 0
+  moneyForKill: 75
+  moneyPerDistance: 7
+  unitCost: 150
+  rewardForReachingEnd: 50
