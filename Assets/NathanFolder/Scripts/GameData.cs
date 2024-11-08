@@ -7,4 +7,13 @@ public class GameData : ScriptableObject
     public int PlayerOneScore;
     public int PlayerTwoScore;
     public int Round;
+    public bool PlayerOneWon;
+    public void ResetGame()
+    {
+        PlayerOneDefense = true;
+        PlayerTwoDefense = false;
+        PlayerOneScore = 0;
+        PlayerTwoScore = 0;
+        Round = 1;
+    }
 }

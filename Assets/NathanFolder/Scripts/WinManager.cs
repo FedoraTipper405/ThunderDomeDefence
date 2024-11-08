@@ -19,6 +19,14 @@ public class WinManager : MonoBehaviour
         {
             gameData.PlayerTwoScore++;
         }
+        if (gameData.PlayerTwoScore >= 2)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+        else if (gameData.PlayerOneScore >=2)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
     public void OffenseWins()
     {
@@ -29,6 +37,14 @@ public class WinManager : MonoBehaviour
         else
         {
             gameData.PlayerTwoScore++;
+        }
+        if (gameData.PlayerTwoScore >= 2)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+        else if (gameData.PlayerOneScore >= 2)
+        {
+            SceneManager.LoadScene("WinScene");
         }
     }
     public void NextRound()
