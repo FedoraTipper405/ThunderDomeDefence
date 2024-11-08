@@ -171,5 +171,6 @@ MonoBehaviour:
   _canExplode: 0
   _explosionSize: 1.5
   _lifeSpan: 0.5
+  _explosion: {fileID: 4769520854474142545, guid: 72c764ec8bbe4244fb9e657ff3b69193, type: 3}
   startPosition: {x: 0, y: 0}
   _lastenemyPosition: {x: 0, y: 0}

@@ -11,6 +11,7 @@ public class BulletLogic : MonoBehaviour
     [SerializeField] public bool _canExplode;
     [SerializeField] public float _explosionSize;
     [SerializeField] public float _lifeSpan;
+    [SerializeField] private GameObject _explosion;
 
     private Transform _enemyTarget;
     public Vector2 startPosition;
@@ -50,6 +51,7 @@ public class BulletLogic : MonoBehaviour
 
     private void ExplodingBullet()
     {
+        Instantiate(_explosion, transform.position, Quaternion.identity);
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, _explosionSize);
         foreach (Collider2D enemy in enemies)
         {
@@ -58,5 +60,6 @@ public class BulletLogic : MonoBehaviour
                enemy.GetComponent<EnemyMovement>().ReduceHealth(_bulletDamage);
             }
         }
+        Destroy(_explosion);
     }
 }
