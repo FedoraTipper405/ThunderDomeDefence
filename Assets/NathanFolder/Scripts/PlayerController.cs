@@ -10,12 +10,22 @@ public class PlayerController : MonoBehaviour
     public GameState currentGameState;
     [SerializeField] GameObject continueButton;
     [SerializeField] OffensePurchaseManager offensePurchaseManager;
+    [SerializeField] GameUIManager gameUIManager;
+    [SerializeField] GameData gameData;
   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentGameState = GameState.PlayerOneTurn;
-        
+        if (gameData.PlayerOneDefense)
+        {
+            gameUIManager.isPlayerOneTurn = true;
+        }
+        else
+        {
+            gameUIManager.isPlayerOneTurn = false;
+        }
+        gameUIManager.UpdateUI();
     }
 
     // Update is called once per frame
@@ -33,7 +43,16 @@ public class PlayerController : MonoBehaviour
         {
             currentGameState = GameState.PlayerTwoTurn;
             continueButton.gameObject.SetActive(false);
-
+            gameUIManager.isDefenseTurn = false; 
+            if (gameData.PlayerOneDefense)
+            {
+                gameUIManager.isPlayerOneTurn = false;
+            }
+            else
+            {
+                gameUIManager.isPlayerOneTurn = true;
+            }
+            gameUIManager.UpdateUI();
         }
         else if(GameState.PlayerTwoTurn == currentGameState)
         {
@@ -45,6 +64,17 @@ public class PlayerController : MonoBehaviour
         {
             continueButton.gameObject.SetActive(true);
             currentGameState = GameState.PlayerOneTurn;
+            gameUIManager.isDefenseTurn = true;
+            if (gameData.PlayerOneDefense)
+            {
+                gameUIManager.isPlayerOneTurn = true;
+            }
+            else
+            {
+                gameUIManager.isPlayerOneTurn = false;
+            }
+            gameUIManager.IncrementWaveCounter();
+            gameUIManager.UpdateUI();
         }
     }
     public void HandleMousePos(Vector2 pos)

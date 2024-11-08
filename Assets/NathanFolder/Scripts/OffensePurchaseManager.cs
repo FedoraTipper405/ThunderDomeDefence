@@ -23,6 +23,7 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] SimulationManager simulationManager;
     [SerializeField] TMP_Text enemyList;
     [SerializeField] WinManager winManager;
+    [SerializeField] GameUIManager gameUIManager;
     string enemies;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,7 @@ public class OffensePurchaseManager : MonoBehaviour
             finance.TakeAwayOffenseMoney(BusData.unitCost);
         }
         GenerateListDisplay();
+        gameUIManager.UpdateUI();
     }
     public void GenerateListDisplay()
     {
@@ -188,6 +190,7 @@ public class OffensePurchaseManager : MonoBehaviour
             spawnQueue.RemoveAt(removeAtThis);
         }
         GenerateListDisplay();
+        gameUIManager.UpdateUI();
     }
     public void SpawnEnemies()
     {
@@ -229,6 +232,7 @@ public class OffensePurchaseManager : MonoBehaviour
         }
         spawnQueue.Clear();
         GenerateListDisplay();
+        gameUIManager.UpdateUI();
     }
     // Update is called once per frame
     void Update()

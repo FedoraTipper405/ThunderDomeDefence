@@ -10,6 +10,7 @@ public class DefensePurchaseManager : MonoBehaviour
     [SerializeField] TurretData[] towerData;
     [SerializeField] PlayerController playerController;
     [SerializeField] DefenseFinance defenseFinance;
+    [SerializeField] GameUIManager gameUIManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +44,7 @@ public class DefensePurchaseManager : MonoBehaviour
             GameObject towerToSpawn = Instantiate(towerPrefabs[towerIndex - 1], currentSelectedSquare.transform.position, Quaternion.identity);
             defenseFinance.RemoveDefenderMoney(towerData[towerIndex-1]._towerCost);
             currentSelectedSquare.gameObject.SetActive(false);
+            gameUIManager.UpdateUI();
         }
        
        // currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);

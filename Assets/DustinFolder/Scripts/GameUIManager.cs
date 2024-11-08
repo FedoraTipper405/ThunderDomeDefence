@@ -13,8 +13,8 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private DefenseFinance defenseFinance;
     [SerializeField] private OffenseFinance offenseFinance;
 
-    private bool isDefenseTurn = true; // Keeps track of whose turn it is
-    private bool isPlayerOneTurn = true; // Keeps track of whose player turn it is
+    public bool isDefenseTurn = true; // Keeps track of whose turn it is
+    public bool isPlayerOneTurn = true; // Keeps track of whose player turn it is
     private int waveCounter = 1; // Counter for the current wave
 
     private void Start()
