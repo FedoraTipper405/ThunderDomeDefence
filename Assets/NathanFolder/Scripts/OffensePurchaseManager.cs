@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OffensePurchaseManager : MonoBehaviour
@@ -20,7 +21,9 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] Transform spawnLocation;
     [SerializeField] PlayerController playerController;
     [SerializeField] SimulationManager simulationManager;
-   
+    [SerializeField] TMP_Text enemyList;
+    [SerializeField] WinManager winManager;
+    string enemies;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +31,8 @@ public class OffensePurchaseManager : MonoBehaviour
     }
     public void AddToEnemyPool(int enemyIndex)
     {
-        if(enemyIndex == ((int)EnemyType.Agile) && finance.offenseMoney >= AgileData.unitCost)
+    
+        if (enemyIndex == ((int)EnemyType.Agile) && finance.offenseMoney >= AgileData.unitCost)
         {
             spawnQueue.Add(AgilePrefab);
             finance.TakeAwayOffenseMoney(AgileData.unitCost);
@@ -48,9 +52,74 @@ public class OffensePurchaseManager : MonoBehaviour
             spawnQueue.Add(BusPrefab);
             finance.TakeAwayOffenseMoney(BusData.unitCost);
         }
+        GenerateListDisplay();
+    }
+    public void GenerateListDisplay()
+    {
+        Debug.Log("TryToGenerate");
+        enemies = "";
+        int numberOfType = 0;
+       // GameObject lastInList = null;
+        for(int i = 0; i < spawnQueue.Count; i++)
+        {
+            if(i == 0)
+            {
+                numberOfType++;
+                Debug.Log(numberOfType);
+            }else if (spawnQueue[i].name == spawnQueue[i-1].name)
+            {
+                numberOfType++;
+                Debug.Log(numberOfType);
+            }
+            else if (spawnQueue[i].name != spawnQueue[i-1].name )    
+            {
+                if (spawnQueue[i-1].name == AgilePrefab.name)
+                {
+                    enemies += " MR:";
+                }
+                else if (spawnQueue[i-1].name == RegularPrefab.name)
+                {
+                    enemies += " RC:";
+                }
+                else if (spawnQueue[i-1].name == HeavyPrefab.name)
+                {
+                    enemies += " B:";
+                }
+                else if (spawnQueue[i-1].name == BusPrefab.name)
+                {
+                    enemies += " PB:";
+                }
+                enemies += numberOfType.ToString();
+                numberOfType = 1;
+                Debug.Log(numberOfType);
+            }
+            if(i == spawnQueue.Count-1)
+            {
+                if (spawnQueue[i].name == AgilePrefab.name)
+                {
+                    enemies += " MR:";
+                }
+                else if (spawnQueue[i].name == RegularPrefab.name)
+                {
+                    enemies += " RC:";
+                }
+                else if (spawnQueue[i].name == HeavyPrefab.name)
+                {
+                    enemies += " B:";
+                }
+                else if (spawnQueue[i].name == BusPrefab.name)
+                {
+                    enemies += " PB:";
+                }
+                enemies += numberOfType.ToString();
+            }
+        }
+        enemyList.SetText(enemies);
+        Debug.Log(enemies);
     }
     public void RemoveLastOfType(int enemyIndex)
     {
+
         int removeAtThis = 0;
         bool foundToDelete = false;
         bool hasReturnedMoney = false;
@@ -118,7 +187,7 @@ public class OffensePurchaseManager : MonoBehaviour
         {
             spawnQueue.RemoveAt(removeAtThis);
         }
-        
+        GenerateListDisplay();
     }
     public void SpawnEnemies()
     {
@@ -137,12 +206,39 @@ public class OffensePurchaseManager : MonoBehaviour
     }
     public void ClearAll()
     {
+        for (int i = 0 ;i < spawnQueue.Count; i++)
+        {
+            if (spawnQueue[i].name == AgilePrefab.name)
+            {
+                finance.AddToOffenseMoney(AgileData.unitCost);
+            }
+            else if (spawnQueue[i].name == RegularPrefab.name)
+            {
+                finance.AddToOffenseMoney(RegularData.unitCost);
+            }
+            else if (spawnQueue[i].name == HeavyPrefab.name)
+            {
+                finance.AddToOffenseMoney(HeavyData.unitCost);
+
+            }
+            else if (spawnQueue[i].name == BusPrefab.name)
+            {
+                finance.AddToOffenseMoney(BusData.unitCost);
+
+            }
+        }
         spawnQueue.Clear();
+        GenerateListDisplay();
     }
     // Update is called once per frame
     void Update()
     {
-        if(spawnQueue.Count <= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        if (finance.offenseMoney < RegularData.unitCost && spawnQueue.Count == 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
+        {
+            winManager.DefenseWins();
+            winManager.NextRound();
+        }
+        if (spawnQueue.Count <= 0 && playerController.currentGameState == GameState.PlayerTwoTurn)
         {
             playerController.ShowContinueButton(false);
         }
@@ -154,11 +250,13 @@ public class OffensePurchaseManager : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
         }
         else
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d28b63d4f170e4591b93463c64e47c, type: 3}
   m_Name: BombTurretData
   m_EditorClassIdentifier: 
-  _towerCost: 100
+  _towerCost: 400
   _targetingRange: 6
   _timeBetweenShots: 2
-  _bulletDamage: 20
+  _bulletDamage: 33
   _bulletSpeed: 10
   _bulletAccuracy: 0
   _canExplode: 1

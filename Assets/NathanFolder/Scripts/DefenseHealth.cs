@@ -5,6 +5,7 @@ public class DefenseHealth : MonoBehaviour
 {
     public int WallHealth;
     [SerializeField] TMP_Text wallHealthText;
+    [SerializeField] WinManager winManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +14,11 @@ public class DefenseHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         WallHealth -= damage;
+        if (WallHealth <= 0 )
+        {
+            winManager.OffenseWins();
+            winManager.NextRound();
+        }
     }
     public void UpdateWallHealthText()
     {
