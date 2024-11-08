@@ -1256,6 +1256,8 @@ MonoBehaviour:
   enemyList: {fileID: 1319297645}
   winManager: {fileID: 1049244159}
   gameUIManager: {fileID: 807042486}
+  defenseFinance: {fileID: 1097037534}
+  SpawnTime: 0.9
 --- !u!114 &109701933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df5cd9b013295643b5f70347ce9d275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offenseMoney: 1000
+  offenseMoney: 1250
 --- !u!1001 &120416522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7703,6 +7705,7 @@ MonoBehaviour:
   playerController: {fileID: 861417556}
   defenseFinance: {fileID: 1097037534}
   gameUIManager: {fileID: 807042486}
+  continueButton: {fileID: 1258391289}
 --- !u!114 &1097037534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15498,6 +15501,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 5dffa0d474cf4774a84272963158b9e8, type: 3}
       propertyPath: m_Name
       value: CastleGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 5dffa0d474cf4774a84272963158b9e8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 5dffa0d474cf4774a84272963158b9e8, type: 3}
       propertyPath: m_LocalPosition.x

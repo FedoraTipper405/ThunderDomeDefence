@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798fffb5e5219b94f958eea6de111128, type: 3}
   m_Name: AgileData
   m_EditorClassIdentifier: 
-  health: 100
-  speed: 3.5
+  health: 150
+  speed: 3.8
   damage: 1
-  moneyForKill: 150
-  moneyPerDistance: 5.25
-  unitCost: 150
-  rewardForReachingEnd: 100
+  canSpawnMotorCycles: 0
+  moneyForKill: 75
+  moneyPerDistance: 7
+  unitCost: 200
+  rewardForReachingEnd: 50

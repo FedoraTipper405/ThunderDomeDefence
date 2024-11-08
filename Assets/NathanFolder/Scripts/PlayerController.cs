@@ -31,19 +31,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-    }
-    public void ShowContinueButton(bool doShow)
-    {
-        continueButton.gameObject.SetActive(doShow);
-    }
-    public void ContinueToNextStage()
-    {
-        if(GameState.PlayerOneTurn == currentGameState)
+       if(currentGameState == GameState.Simulating)
         {
-            currentGameState = GameState.PlayerTwoTurn;
-            continueButton.gameObject.SetActive(false);
-            gameUIManager.isDefenseTurn = false; 
+            gameUIManager.isDefenseTurn = false;
             if (gameData.PlayerOneDefense)
             {
                 gameUIManager.isPlayerOneTurn = false;
@@ -54,16 +44,42 @@ public class PlayerController : MonoBehaviour
             }
             gameUIManager.UpdateUI();
         }
+    }
+    public void ShowContinueButton(bool doShow)
+    {
+        continueButton.gameObject.SetActive(doShow);
+    }
+    public void ContinueToNextStage()
+    {
+        if(GameState.PlayerOneTurn == currentGameState)
+        {
+            currentGameState = GameState.PlayerTwoTurn;
+
+            gameUIManager.isDefenseTurn = false; 
+            if (gameData.PlayerOneDefense)
+            {
+                gameUIManager.isPlayerOneTurn = false;
+            }
+            else
+            {
+                gameUIManager.isPlayerOneTurn = true;
+            }
+            gameUIManager.UpdateUI();
+            continueButton.gameObject.SetActive(false);
+        }
         else if(GameState.PlayerTwoTurn == currentGameState)
         {
             currentGameState = GameState.Simulating;
             offensePurchaseManager.SpawnEnemies();
+            
+            
+            gameUIManager.UpdateUI();
             continueButton.gameObject.SetActive(false);
         }
         else if(GameState.Simulating == currentGameState)
         {
             continueButton.gameObject.SetActive(true);
-            currentGameState = GameState.PlayerOneTurn;
+            
             gameUIManager.isDefenseTurn = true;
             if (gameData.PlayerOneDefense)
             {
@@ -75,6 +91,7 @@ public class PlayerController : MonoBehaviour
             }
             gameUIManager.IncrementWaveCounter();
             gameUIManager.UpdateUI();
+            currentGameState = GameState.PlayerOneTurn;
         }
     }
     public void HandleMousePos(Vector2 pos)

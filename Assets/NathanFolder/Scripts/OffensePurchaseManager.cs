@@ -24,6 +24,8 @@ public class OffensePurchaseManager : MonoBehaviour
     [SerializeField] TMP_Text enemyList;
     [SerializeField] WinManager winManager;
     [SerializeField] GameUIManager gameUIManager;
+    [SerializeField] DefenseFinance defenseFinance;
+    [SerializeField] float SpawnTime;
     string enemies;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -203,9 +205,11 @@ public class OffensePurchaseManager : MonoBehaviour
         {
             GameObject lastSpawnedEnemy = Instantiate(spawnQueue[i], spawnLocation.position, Quaternion.identity);
             simulationManager.EnemiesSpawned++;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(SpawnTime);
         }
         spawnQueue.Clear();
+        defenseFinance.AddToDefenderMoney(250);
+        GenerateListDisplay();
     }
     public void ClearAll()
     {

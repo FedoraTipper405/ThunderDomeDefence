@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d28b63d4f170e4591b93463c64e47c, type: 3}
   m_Name: AutoCannonTurretData
   m_EditorClassIdentifier: 
-  _towerCost: 250
-  _targetingRange: 6
-  _timeBetweenShots: 0.75
+  _towerCost: 300
+  _targetingRange: 5
+  _timeBetweenShots: 0.9
   _bulletDamage: 25
-  _bulletSpeed: 20
+  _bulletSpeed: 17
   _bulletAccuracy: 0
   _canExplode: 0
   _sniperMode: 0

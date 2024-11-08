@@ -11,6 +11,7 @@ public class DefensePurchaseManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     [SerializeField] DefenseFinance defenseFinance;
     [SerializeField] GameUIManager gameUIManager;
+    [SerializeField] GameObject continueButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,7 @@ public class DefensePurchaseManager : MonoBehaviour
         if (!menuIsOpen)
         {
             StartCoroutine(StopMultiClick(selectedSquare));
+            continueButton.SetActive(false);
         }
        
     }
@@ -46,7 +48,7 @@ public class DefensePurchaseManager : MonoBehaviour
             currentSelectedSquare.gameObject.SetActive(false);
             gameUIManager.UpdateUI();
         }
-       
+       continueButton.SetActive(true) ;
        // currentSelectedSquare.transform.parent.GetChild(towerIndex).gameObject.SetActive(true);
        
     }
