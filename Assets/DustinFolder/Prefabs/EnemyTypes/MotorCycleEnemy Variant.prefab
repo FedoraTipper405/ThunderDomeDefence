@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2878600550221702143, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_Size.x
+      value: 1.818975
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878600550221702143, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2212343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878600550221702143, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1483655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878600550221702143, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0055360794
+      objectReference: {fileID: 0}
     - target: {fileID: 4380455816401955208, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
       propertyPath: m_Name
       value: MotorCycleEnemy Variant
@@ -31,6 +47,30 @@ PrefabInstance:
     - target: {fileID: 7446251405963899320, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
       propertyPath: m_Color.r
       value: 0.045387268
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310801702859121050, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7208940576654298172, guid: 244846168999b744dbadb8c5bdbfc6bb, type: 3}
+    - target: {fileID: 8310801702859121050, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850473007807003623, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850473007807003623, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850473007807003623, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850473007807003623, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9139847498871799518, guid: ce589ed43deab1d4396f90345dd0ac10, type: 3}
       propertyPath: m_LocalPosition.x

@@ -52,11 +52,11 @@ public class GameUIManager : MonoBehaviour
         // Update money based on whose turn it is
         if (isDefenseTurn)
         {
-            moneyText.text = $"Defense Money: {(int)defenseFinance.GetDefenseMoney()}";
+            moneyText.text = $"{(int)defenseFinance.GetDefenseMoney()}";
         }
         else
         {
-            moneyText.text = $"Offense Money: {(int)offenseFinance.GetOffenseMoney()}";
+            moneyText.text = $"{(int)offenseFinance.GetOffenseMoney()}";
         }
 
         // Update turn and role text
