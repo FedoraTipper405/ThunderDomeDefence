@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: BetweenRounds
+  gameData: {fileID: 11400000, guid: 1b56fbb6311da1049bd76839acb7150d, type: 2}
 --- !u!4 &301423413
 Transform:
   m_ObjectHideFlags: 0

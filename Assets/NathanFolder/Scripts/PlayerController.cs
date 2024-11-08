@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] OffensePurchaseManager offensePurchaseManager;
     [SerializeField] GameUIManager gameUIManager;
     [SerializeField] GameData gameData;
+    [SerializeField] public int _soundEffect;
   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
         if(GameState.PlayerOneTurn == currentGameState)
         {
             currentGameState = GameState.PlayerTwoTurn;
+            _soundEffect = Random.Range(4, 7);
+            AudioManager.PlaySound(_soundEffect);
 
             gameUIManager.isDefenseTurn = false; 
             if (gameData.PlayerOneDefense)

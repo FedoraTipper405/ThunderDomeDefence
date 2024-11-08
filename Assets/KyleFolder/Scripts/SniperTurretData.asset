@@ -21,3 +21,4 @@ MonoBehaviour:
   _canExplode: 0
   _sniperMode: 1
   _bulletPrefab: {fileID: 0}
+  _soundEffect: 3

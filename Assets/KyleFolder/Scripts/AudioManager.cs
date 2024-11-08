@@ -9,9 +9,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource SFXSource;
     [SerializeField]
-    private static AudioManager Instance;
+    public static AudioManager Instance;
 
-    private void Awake()
+    public void Awake()
     {
         Instance = this;
     }

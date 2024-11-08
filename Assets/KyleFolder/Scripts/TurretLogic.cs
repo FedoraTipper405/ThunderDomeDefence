@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class TurretLogic : MonoBehaviour
     [SerializeField] public float _bulletAccuracy => _turretData._bulletAccuracy;
     [SerializeField] public bool _canExplode => _turretData._canExplode;
     [SerializeField] public bool _sniperFire => _turretData._sniperMode;
+    [SerializeField] public int _soundEffect => _turretData._soundEffect;
 
     [SerializeField] private Transform _turretRotation;
     [SerializeField] private Transform _firingPoint;
@@ -81,7 +83,8 @@ public class TurretLogic : MonoBehaviour
         laserLine.SetPosition(1, _enemytarget.position);
         StartCoroutine(ShowLaser());
         _enemytarget.gameObject.GetComponent<EnemyMovement>().ReduceHealth(_turretData._bulletDamage);
-       // Destroy(_enemytarget.gameObject);
+        AudioManager.PlaySound(_soundEffect);
+        // Destroy(_enemytarget.gameObject);
     }
 
     private void Shoot()
@@ -93,6 +96,7 @@ public class TurretLogic : MonoBehaviour
         bulletScript._canExplode = _turretData._canExplode;
         bulletScript._lastenemyPosition = (Vector2)_enemytarget.position + new Vector2(Random.Range(-_bulletAccuracy, _bulletAccuracy), Random.Range(-_bulletAccuracy, _bulletAccuracy));
         bulletScript.startPosition = (Vector2)transform.position;
+        AudioManager.PlaySound(_soundEffect);
     }
 
     private void FindTarget()
@@ -116,11 +120,5 @@ public class TurretLogic : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         _turretRotation.rotation = targetRotation;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.green;
-        Handles.DrawWireDisc(transform.position, transform.forward, _targetingRange);
     }
 }

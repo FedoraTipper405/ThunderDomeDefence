@@ -12,4 +12,5 @@ public class TurretData : ScriptableObject
     [SerializeField] public bool _canExplode;
     [SerializeField] public bool _sniperMode;
     [SerializeField] public GameObject _bulletPrefab;
+    [SerializeField] public int _soundEffect;
 }

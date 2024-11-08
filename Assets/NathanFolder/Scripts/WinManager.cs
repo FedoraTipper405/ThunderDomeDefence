@@ -9,6 +9,7 @@ public class WinManager : MonoBehaviour
     {
         
     }
+    
     public void DefenseWins()
     {
         if (gameData.PlayerOneDefense)
@@ -19,14 +20,7 @@ public class WinManager : MonoBehaviour
         {
             gameData.PlayerTwoScore++;
         }
-        if (gameData.PlayerTwoScore >= 2)
-        {
-            SceneManager.LoadScene("WinScene");
-        }
-        else if (gameData.PlayerOneScore >=2)
-        {
-            SceneManager.LoadScene("WinScene");
-        }
+        
     }
     public void OffenseWins()
     {
@@ -38,14 +32,7 @@ public class WinManager : MonoBehaviour
         {
             gameData.PlayerTwoScore++;
         }
-        if (gameData.PlayerTwoScore >= 2)
-        {
-            SceneManager.LoadScene("WinScene");
-        }
-        else if (gameData.PlayerOneScore >= 2)
-        {
-            SceneManager.LoadScene("WinScene");
-        }
+       
     }
     public void NextRound()
     {
@@ -57,6 +44,15 @@ public class WinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameData.PlayerTwoScore >= 2)
+        {
+            gameData.PlayerOneWon = false;
+            SceneManager.LoadScene("WinScene");
+        }
+        else if (gameData.PlayerOneScore >= 2)
+        {
+            gameData.PlayerOneWon = true;
+            SceneManager.LoadScene("WinScene");
+        }
     }
 }

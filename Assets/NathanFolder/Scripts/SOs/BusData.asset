@@ -18,5 +18,5 @@ MonoBehaviour:
   canSpawnMotorCycles: 1
   moneyForKill: 150
   moneyPerDistance: 23
-  unitCost: 600
+  unitCost: 700
   rewardForReachingEnd: 100

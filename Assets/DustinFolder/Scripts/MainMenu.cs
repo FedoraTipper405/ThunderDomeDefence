@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad; // Scene to load, set in the Inspector
+    [SerializeField] GameData gameData;
     
     public void StartGame()
     {
@@ -11,6 +12,7 @@ public class MainMenu : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
+        gameData.ResetGame();
     }
 
     public void QuitGame()

@@ -4220,7 +4220,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d96712707168564a9fa4190cee867aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioList: []
+  audioList:
+  - {fileID: 8300000, guid: ed76b16ccb49b7140ae44b09b2e8b518, type: 3}
+  - {fileID: 8300000, guid: 8c88aa831b3c1cc498a7a771fcced7ec, type: 3}
+  - {fileID: 8300000, guid: 809a8279cc9803446b9aebb359fbc69e, type: 3}
+  - {fileID: 8300000, guid: 90c4bbecfbfb8184b902fa5412f4ca37, type: 3}
+  - {fileID: 8300000, guid: 6ac60a16b3e3bb748b090b662cbbf80c, type: 3}
+  - {fileID: 8300000, guid: 1ac84d4ab6d6bc849a9f8c31bc0da6ea, type: 3}
+  - {fileID: 8300000, guid: 77e3504e570e7ac4d91b9ff5c913aa48, type: 3}
+  - {fileID: 8300000, guid: 0e823a56201ed0645b9c3872c35a9221, type: 3}
+  - {fileID: 8300000, guid: 81fe9558258d47a46ae24e281a3ffcb6, type: 3}
+  - {fileID: 8300000, guid: 231e0bc9e7d88e04abe3d2d179a29f18, type: 3}
   SFXSource: {fileID: 684486277}
 --- !u!4 &609479368
 Transform:
@@ -6405,6 +6415,7 @@ MonoBehaviour:
   offensePurchaseManager: {fileID: 109701932}
   gameUIManager: {fileID: 807042486}
   gameData: {fileID: 11400000, guid: 1b56fbb6311da1049bd76839acb7150d, type: 2}
+  _soundEffect: 0
 --- !u!114 &861417557
 MonoBehaviour:
   m_ObjectHideFlags: 0

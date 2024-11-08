@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5144730249889101024}
   - component: {fileID: 2704262969552276784}
   - component: {fileID: 2802240358687719754}
+  - component: {fileID: 8428584732135677992}
   m_Layer: 0
   m_Name: AutoCannonTurret
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 8428584732135677992}
 --- !u!120 &2802240358687719754
 LineRenderer:
   serializedVersion: 2
@@ -247,6 +249,28 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!95 &8428584732135677992
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963870448078580771}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45d0c95d9ec401b46b4d05dc93c1b14c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5529335911219394493
 GameObject:
   m_ObjectHideFlags: 0

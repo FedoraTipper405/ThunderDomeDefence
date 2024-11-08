@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 randomMotorCyclePos;
     float lastXPos;
     float lastYPos;
+    public int _soundEffect = 8;
 
     private void Start()
     {
@@ -128,6 +129,7 @@ public class EnemyMovement : MonoBehaviour
         if(health <= 0)
         {
             defenseFinance.AddToDefenderMoney(enemyData.moneyForKill);
+            AudioManager.PlaySound(_soundEffect);
             Destroy(gameObject);
         }
     }
