@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BombTurretData
   m_EditorClassIdentifier: 
   _towerCost: 800
-  _targetingRange: 4.5
-  _timeBetweenShots: 1.6
-  _bulletDamage: 40
-  _bulletSpeed: 3
+  _targetingRange: 5
+  _timeBetweenShots: 2
+  _bulletDamage: 55
+  _bulletSpeed: 8
   _bulletAccuracy: 0
   _canExplode: 1
   _sniperMode: 0

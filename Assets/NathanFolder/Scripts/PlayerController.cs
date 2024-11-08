@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         currentGameState = GameState.PlayerOneTurn;
+        _soundEffect = Random.Range(10, 13);
+        AudioManager.PlaySound(_soundEffect);
         if (gameData.PlayerOneDefense)
         {
             gameUIManager.isPlayerOneTurn = true;
@@ -82,7 +84,8 @@ public class PlayerController : MonoBehaviour
         else if(GameState.Simulating == currentGameState)
         {
             continueButton.gameObject.SetActive(true);
-            
+            _soundEffect = Random.Range(10, 13);
+            AudioManager.PlaySound(_soundEffect);
             gameUIManager.isDefenseTurn = true;
             if (gameData.PlayerOneDefense)
             {
